@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/*
+Colors
+*/
+
+:root {
+    --clr-light-purple:239, 85%, 70%;
+    --clr-dark-purple: 246, 46%, 37%;
+    --clr-light-orange: 45, 99%, 49%;
+    --clr-dark-orange: 34, 99%, 47%;
+    --clr-neutral-white: 0, 0%, 97%;
+}
+
+.bg-light {
+    background-color: hsl( var(--clr-light-purple));
+}
+.bg-dark {
+    background-color: hsl( var(--clr-dark-purple));
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 2em auto;
+
+
+}
+
+input[type=text] {
+    border: none;
+    border-radius: .35rem;
+    background-color: hsl( var(--clr-light-orange),30%);
+    padding: .6em 1em;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: .8em 0em;
+    text-align: center;
+}
+
+input:focus {
+    background-color: hsl( var(--clr-neutral-white));
+    outline-color:hsl( var(--clr-dark-orange),80%) ;
+
+}
+
+input::placeholder {
+    color: hsl( var(--clr-neutral-white), 60%);
+}
+
+button{
+    border: none;
+    border-radius: .35rem;
+    padding: .5em 1em;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background-color: hsl( var(--clr-dark-orange));
+    color: hsl( var(--clr-neutral-white));
+    border: 2px solid hsl( var(--clr-dark-purple));
+    margin-bottom: 1em;
+}
+
+#lavender-one{
+    position:absolute;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 15%;
+}
