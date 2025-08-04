@@ -5,6 +5,19 @@ const appSettings = {
     databaseURL: 'https://shopping-cart-d7284-default-rtdb.europe-west1.firebasedatabase.app/'
 }
 
+const tl = gsap.timeline({defaults:{ opacity: 0, ease: 'power2'}});
+
+function init(){
+tl.from('#main', {ease:'linear', autoAlpha:0})
+    .from('#input-field', {duration: .6,  y: 100})
+    .from('#add-button', { scale: 0, ease:'back'}, '<')
+    .from('#shopping-list', {duration: .6,  y: -100, ease:'back'}, 1)
+}
+
+window.addEventListener('load', function(e){
+    init()
+})
+
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const itemsInDB = ref(database, "items")
@@ -38,7 +51,7 @@ onValue(itemsInDB, function(snapshot){
         }
     } else {
         shoppingList.innerHTML = `
-        <div><i class="fa-solid fa-basket-shopping"></i></div>
+        <div id='info'><i class="fa-solid fa-basket-shopping"></i></div>
         <p>No items here yet...</p>`
     }
 
