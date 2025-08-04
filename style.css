@@ -63,6 +63,10 @@ ul li {
 
 }
 
+ul li:hover {
+    background-color: hsl( var(--clr-light-purple));
+}
+
 
 input[type=text] {
     border: none;
@@ -95,6 +99,11 @@ button{
     color: hsl( var(--clr-neutral-white));
     border: 2px solid hsl( var(--clr-dark-purple));
     margin-bottom: 1em;
+}
+
+button:hover {
+    background-color: hsl( var(--clr-light-orange));
+    color: black;
 }
 
 #lavender-one{
