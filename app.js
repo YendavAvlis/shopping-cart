@@ -37,7 +37,9 @@ onValue(itemsInDB, function(snapshot){
             addNewItem(currentItem)
         }
     } else {
-        shoppingList.textContent = 'No items here yet...'
+        shoppingList.innerHTML = `
+        <div><i class="fa-solid fa-basket-shopping"></i></div>
+        <p>No items here yet...</p>`
     }
 
 })

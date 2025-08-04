@@ -63,6 +63,16 @@ ul li {
 
 }
 
+i {
+    opacity: 90%;
+    color: hsl( var(--clr-neutral-white), 30%)
+}
+
+ul p {
+    opacity: 90%;
+    color: hsl( var(--clr-neutral-white), 30%);
+}
+
 ul li:hover {
     background-color: hsl( var(--clr-light-purple));
 }
