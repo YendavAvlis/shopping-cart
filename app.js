@@ -12,6 +12,7 @@ tl.from('#main', {ease:'linear', autoAlpha:0})
     .from('#input-field', {duration: .6,  y: 100})
     .from('#add-button', { scale: 0, ease:'back'}, '<')
     .from('#shopping-list', {duration: .6,  y: -100, ease:'back'}, 1)
+    .from('.emoji', {duration: .6,  x: 100, ease:'back'}, 1)
 }
 
 window.addEventListener('load', function(e){
@@ -28,12 +29,25 @@ console.log(app)
 const inputField = document.querySelector('#input-field')
 const addButton = document.querySelector('#add-button')
 const shoppingList = document.querySelector('#shopping-list')
+const main = document.querySelector('#main')
+const shoppingListChild = shoppingList.children
+const newDiv = document.createElement('div')
+newDiv.classList.add('emoji')
+newDiv.textContent = '🛒'
+main.prepend(newDiv)
+
+
 
 addButton.addEventListener('click', () => {
     let inputValue = inputField.value
     push(itemsInDB, inputValue)
 
     clearInputField()
+    // for(let i = 0; i < shoppingListChild.length; i++){
+    //     if(shoppingListChild[shoppingListChild.length -1] === true){
+    //         tl.from(shoppingListChild[i], {opacity:0, scale: 0, ease: 'back'})
+    //     }
+    // }
 
 })
 
@@ -67,10 +81,12 @@ function addNewItem(item){
     let itemID = item[0]
     let itemValue = item[1]
     newElement.textContent = `${itemValue}`
+
     shoppingList.append(newElement)
 
     newElement.addEventListener('click', () => {
         let itemLocationInDB = ref(database, `items/${itemID}`)
+
         remove(itemLocationInDB)
 
     })

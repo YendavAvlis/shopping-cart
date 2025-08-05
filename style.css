@@ -131,3 +131,10 @@ button:hover {
     z-index: -1;
     opacity: 5%;
 }
+
+
+.emoji{
+    font-size: 7em;
+    text-align: center;
+    opacity: 60%;
+}
