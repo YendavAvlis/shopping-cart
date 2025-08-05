@@ -33,6 +33,7 @@ body {
     font-size: 16px;
     height: 100vh;
     user-select: none;
+
 }
 
 main{
@@ -40,15 +41,16 @@ main{
     display: flex;
     flex-direction: column;
     max-width: 320px;
-    margin: 2em auto;
+    margin: 2em ;
     height: 100vh;
+
 }
 
 ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
+    padding-bottom: 3em;
     gap: .75em;
 
 }
